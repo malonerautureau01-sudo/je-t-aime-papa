@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Je t'aime Papa ❤️</title>
+<style>
+  :root { --rose:#f7b8c9; --violet:#9b8ce5; --ink:#3c3150; }
+  * { box-sizing: border-box; }
+  body {
+    margin:0; min-height:100vh; color:var(--ink);
+    font-family: system-ui, -apple-system, Segoe UI, sans-serif;
+    background: radial-gradient(circle at top, #fff0f4, #e5dcf7 65%, #d7def8);
+    display:flex; justify-content:center; padding:24px 14px;
+  }
+  main { width:min(760px,100%); }
+  .hero { text-align:center; padding:28px 18px 20px; }
+  .heart { font-size:44px; animation: beat 1.5s infinite; }
+  @keyframes beat { 50% { transform:scale(1.12); } }
+  h1 { margin:8px 0; font-size:clamp(2rem,7vw,3.3rem); line-height:1.1; }
+  .subtitle { font-size:1.08rem; }
+  .card {
+    background:rgba(255,255,255,.83); border:1px solid rgba(255,255,255,.9);
+    border-radius:24px; padding:22px; margin:14px 0;
+    box-shadow:0 12px 32px rgba(87,70,140,.12);
+  }
+  .controls { display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin:18px 0 8px; }
+  button {
+    border:0; border-radius:999px; padding:13px 20px; font-size:1rem; font-weight:700;
+    cursor:pointer; background:var(--violet); color:white;
+  }
+  button.secondary { background:#f4d9e3; color:#593e59; }
+  button:focus-visible { outline:3px solid #4c3c91; outline-offset:3px; }
+  .progress { height:9px; background:#eee8fa; border-radius:99px; overflow:hidden; margin:14px 0 6px; }
+  .bar { height:100%; width:0%; background:linear-gradient(90deg,var(--rose),var(--violet)); transition:width .2s linear; }
+  .time { display:flex; justify-content:space-between; font-size:.9rem; opacity:.8; }
+  .note { font-size:.9rem; opacity:.78; text-align:center; }
+  h2 { margin-top:0; }
+  .lyrics { white-space:pre-line; line-height:1.8; text-align:center; font-size:1.05rem; }
+  .verse { padding:14px 6px; border-bottom:1px solid #eee6f5; }
+  .verse:last-child { border-bottom:0; }
+  .footer { text-align:center; padding:18px 8px 28px; }
+</style>
+</head>
+<body>
+<main>
+  <section class="hero">
+    <div class="heart">💗</div>
+    <h1>Je t'aime Papa</h1>
+    <p class="subtitle">Une petite chanson toute douce, rien que pour toi.</p>
+  </section>
+
+  <section class="card">
+    <h2 style="text-align:center">🎵 Ma chanson pour Papa</h2>
+    <p style="text-align:center">Une ballade pop moderne, un peu triste, avec des paroles pleines d'amour.</p>
+    <div class="controls">
+      <button id="play">▶ Écouter la chanson</button>
+      <button id="pause" class="secondary">Ⅱ Pause</button>
+      <button id="restart" class="secondary">↻ Recommencer</button>
+    </div>
+    <div class="progress"><div class="bar" id="bar"></div></div>
+    <div class="time"><span id="elapsed">0:00</span><span>5:00</span></div>
+    <p class="note" id="status">Appuie sur « Écouter la chanson » pour commencer. 🎹</p>
+  </section>
+
+  <section class="card">
+    <h2 style="text-align:center">💌 Les paroles</h2>
+    <div class="lyrics">
+      <div class="verse"><strong>Intro</strong><br>
+Papa, écoute mon cœur,
+Il veut te dire quelque chose…
+Je t'aime plus que les mots,
+Et mon amour pour toi est immense.</div>
+      <div class="verse"><strong>Couplet 1</strong><br>
+Je t'aime Papa, t'es ma vie,
+Tu mets du soleil dans mes jours gris.
+Quand tu souris, tout devient beau,
+Ta voix me réchauffe comme un cadeau.
+Quand j'ai peur, tu me rassures,
+Avec toi, je me sens plus sûr.
+Même si parfois je ne le dis pas,
+Sache que je pense très fort à toi.</div>
+      <div class="verse"><strong>Refrain</strong><br>
+Je t'aime Papa, t'es ma vie,
+Mon étoile quand vient la nuit.
+Mon héros, mon cœur, mon abri,
+Je veux te voir heureux aussi.
+Je t'aime Papa, pour toujours,
+Je t'envoie des milliers d'amour.
+Et même si le temps s'en va,
+Mon cœur restera près de toi.</div>
+      <div class="verse"><strong>Couplet 2</strong><br>
+Merci pour les rires et les câlins,
+Pour ta main qui guide mon chemin.
+Pour les petits moments partagés,
+Les souvenirs qu'on va garder.
+Tu n'as pas besoin d'être parfait,
+Pour moi, tu comptes plus que jamais.
+Un simple sourire, un « ça va ? »,
+Ça rend plus belle ma journée grâce à toi.</div>
+      <div class="verse"><strong>Refrain</strong><br>
+Je t'aime Papa, t'es ma vie,
+Mon étoile quand vient la nuit.
+Mon héros, mon cœur, mon abri,
+Je veux te voir heureux aussi.
+Je t'aime Papa, pour toujours,
+Je t'envoie des milliers d'amour.
+Et même si le temps s'en va,
+Mon cœur restera près de toi.</div>
+      <div class="verse"><strong>Pont tout doux</strong><br>
+Si je pouvais t'offrir le ciel,
+J'y mettrais mille arcs-en-ciel.
+Un soleil rien que pour tes matins,
+Et plein de bonheur sur ton chemin.
+Je ne suis pas toujours très fort
+Pour dire ce que je ressens au fond,
+Alors je chante ces quelques mots :
+Papa, je t'aime plus que tout au monde.</div>
+      <div class="verse"><strong>Dernier refrain</strong><br>
+Je t'aime Papa, t'es ma vie,
+Mon étoile quand vient la nuit.
+Mon héros, mon cœur, mon abri,
+Tu es un cadeau dans ma vie.
+Je t'aime Papa, pour toujours,
+Aujourd'hui, demain, chaque jour.
+Garde ces mots tout près de toi :
+Je t'aime, Papa… n'en doute pas.</div>
+      <div class="verse"><strong>Outro</strong><br>
+Je t'aime Papa…
+Plus loin que les étoiles,
+Plus fort que les mots.
+Merci d'être mon Papa. ❤️</div>
+    </div>
+  </section>
+  <div class="footer">Fait avec tout mon amour pour Papa 💖</div>
+</main>
+<script>
+(() => {
+  const DURATION = 300;
+  let ctx = null, master = null, startedAt = 0, elapsedBeforePause = 0;
+  let running = false, raf = null, timers = [], nextNoteTimer = null;
+  const playBtn = document.getElementById('play');
+  const pauseBtn = document.getElementById('pause');
+  const restartBtn = document.getElementById('restart');
+  const bar = document.getElementById('bar');
+  const elapsed = document.getElementById('elapsed');
+  const status = document.getElementById('status');
+
+  const chords = [
+    [220.00,261.63,329.63,392.00], // Am7, mélancolique
+    [174.61,220.00,261.63,349.23], // Fmaj7
+    [196.00,246.94,293.66,392.00], // G
+    [196.00,246.94,293.66,349.23]  // Em7
+  ];
+  const melody = [440,392,329.63,293.66,329.63,392,349.23,329.63,261.63,293.66,329.63,392];
+
+  function formatTime(sec) {
+    const s = Math.floor(sec);
+    return Math.floor(s/60) + ':' + String(s%60).padStart(2,'0');
+  }
+  function currentTime() {
+    return running ? elapsedBeforePause + (ctx.currentTime - startedAt) : elapsedBeforePause;
+  }
+  function tone(freq, when, length, volume, type='sine') {
+    if (!ctx || !master) return;
+    const osc = ctx.createOscillator(), gain = ctx.createGain();
+    osc.type = type; osc.frequency.setValueAtTime(freq, when);
+    gain.gain.setValueAtTime(0.0001, when);
+    gain.gain.exponentialRampToValueAtTime(volume, when + 0.12);
+    gain.gain.setTargetAtTime(0.0001, when + Math.max(.15,length-.25), .18);
+    osc.connect(gain); gain.connect(master);
+    osc.start(when); osc.stop(when + length + .3);
+  }
+  function playPattern() {
+    if (!running) return;
+    const t = ctx.currentTime + .04;
+    const position = currentTime();
+    const chordIndex = Math.floor(position / 5) % chords.length;
+    // Accords doux + notes de piano feutrées pour une ambiance pop triste.
+    chords[chordIndex].forEach((f,i) => tone(f, t, 4.8, i===0 ? .025 : .016, 'sine'));
+    const noteIndex = Math.floor(position / .62) % melody.length;
+    tone(melody[noteIndex], t, .9, .038, 'triangle');
+    // Petit battement grave régulier, façon pop moderne, sans être trop fort.
+    if (Math.floor(position / 1.24) % 2 === 0) tone(110, t, .22, .028, 'sine');
+    nextNoteTimer = setTimeout(playPattern, 620);
+  }
+  function update() {
+    if (!running) return;
+    const t = Math.min(DURATION, currentTime());
+    bar.style.width = (t / DURATION * 100) + '%';
+    elapsed.textContent = formatTime(t);
+    if (t >= DURATION) { stopAtEnd(); return; }
+    raf = requestAnimationFrame(update);
+  }
+  function clearTimers() {
+    if (nextNoteTimer) clearTimeout(nextNoteTimer);
+    if (raf) cancelAnimationFrame(raf);
+    timers.forEach(clearTimeout); timers = [];
+  }
+  function stopAtEnd() {
+    running = false; elapsedBeforePause = DURATION; clearTimers();
+    bar.style.width = '100%'; elapsed.textContent = '5:00';
+    status.textContent = 'La chanson est terminée. Envoie un gros câlin à Papa ! ❤️';
+    if (ctx && ctx.state === 'running') ctx.suspend();
+  }
+  async function start() {
+    if (elapsedBeforePause >= DURATION) await reset();
+    if (!ctx) {
+      ctx = new (window.AudioContext || window.webkitAudioContext)();
+      master = ctx.createGain(); master.gain.value = .7; master.connect(ctx.destination);
+    }
+    await ctx.resume();
+    if (running) return;
+    startedAt = ctx.currentTime; running = true;
+    status.textContent = 'Ballade pop douce et mélancolique… chante avec ton cœur. 💗';
+    playPattern(); update();
+  }
+  function pause() {
+    if (!running) return;
+    elapsedBeforePause = Math.min(DURATION, currentTime());
+    running = false; clearTimers();
+    if (ctx) ctx.suspend();
+    status.textContent = 'Pause. Tu peux reprendre quand tu veux.';
+    elapsed.textContent = formatTime(elapsedBeforePause);
+    bar.style.width = (elapsedBeforePause / DURATION * 100) + '%';
+  }
+  async function reset() {
+    running = false; clearTimers();
+    elapsedBeforePause = 0;
+    if (ctx) await ctx.suspend();
+    bar.style.width = '0%'; elapsed.textContent = '0:00';
+    status.textContent = 'Prêt à recommencer. 🎹';
+  }
+  playBtn.addEventListener('click', start);
+  pauseBtn.addEventListener('click', pause);
+  restartBtn.addEventListener('click', async () => { await reset(); await start(); });
+})();
+</script>
+</body>
+</html>
